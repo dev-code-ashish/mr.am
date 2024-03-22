@@ -26,18 +26,18 @@ const aboutData = [
       {
         title: 'Web Development',
         icons: [
-          <FaHtml5 />,
-          <FaCss3 />,
-          <FaJs />,
-          <FaReact />,
-          <SiNextdotjs />,
-          <SiFramer />,
-          <FaWordpress />,
+          <FaHtml5 key="0"/>,
+          <FaCss3 key="1"/>,
+          <FaJs key="2"/>,
+          <FaReact key="3"/>,
+          <SiNextdotjs key="4"/>,
+          <SiFramer key="5"/>,
+          <FaWordpress key="6"/>,
         ],
       },
       {
         title: 'UI/UX Design',
-        icons: [<FaFigma />, <SiAdobexd />, <SiAdobephotoshop />],
+        icons: [<FaFigma key="0"/>, <SiAdobexd key="1"/>, <SiAdobephotoshop key="2"/>],
       },
     ],
   },
@@ -135,7 +135,7 @@ const About = () => {
             exit="hidden" 
             className="max-w-[500px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0"
           >
-            10 years ago, I began freelancing as a developer. Since then I've done remote work for agencies, counsulted for startups, and collaborated on digital products for business and consumer use.
+            10 years ago, I began freelancing as a developer. Since then I&apos;ve done remote work for agencies, counsulted for startups, and collaborated on digital products for business and consumer use.
           </motion.p>
           {/* counters */}
           <motion.div 
@@ -220,7 +220,7 @@ const About = () => {
                     {/* icons */}
                     {item.icons?.map((icon, itemIndex) => {
                       return (
-                        <div className="text-2xl text-white">{icon}</div>
+                        <div className="text-2xl text-white" key={itemIndex}>{icon}</div>
                       );
                     })}
                   </div>
