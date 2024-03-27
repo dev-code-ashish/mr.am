@@ -20,7 +20,7 @@ export default function WeatherResult({
         <div className="grid grid-cols-3 gap-y-2">
           <div className="text-xs font-bold">City</div>
           <div className="ml-auto mr-2 text-xs font-bold">Latitude</div>
-          <div className="ml-auto text-xs font-bold">Longitude</div>
+          <div className="ml-auto mr-2 text-xs font-bold">Longitude</div>
           {searchResult.map((item) => {
             return (
               <FragmentClickWrapper key={item.id} item={item}>
