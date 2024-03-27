@@ -134,7 +134,7 @@ import {
                   currentHourlyDispayIndex + HOURLY_DATA_DISPLAY_LIMIT
                 )
               }
-              className="p-4 m-4 border rounded-lg border-foregroundColor bg-foregroundColor text-white text-sm"
+              className="btn rounded-full border border-white/50 max-w-[170px] px-8 transition-all duration-300 flex items-center justify-center overflow-hidden hover:border-accent group"
             >
               Load More
             </button>
