@@ -15,8 +15,8 @@ export default function WeatherResult({
   );
 
   return (
-    <div className={`relative ${searchResult.length > 0 ? "block" : "hidden"}`}>
-      <div className="bg-gray-300 rounded-md my-2 p-2 bg-opacity-95 absolute left-0 top-0 w-full">
+    <div className={`relative ${searchResult.length > 0 ? "block" : "hidden"} z-50`}>
+      <div className="bg-gray-800 rounded-md my-2 p-2 absolute left-0 top-0 w-full">
         <div className="grid grid-cols-3 gap-y-2">
           <div className="text-xs font-bold">City</div>
           <div className="ml-auto mr-2 text-xs font-bold">Latitude</div>

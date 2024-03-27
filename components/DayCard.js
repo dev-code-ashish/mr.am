@@ -11,12 +11,10 @@ export default function DayCard({
   const dayDate = formatTimestampToDay(timestamp);
 
   return (
-    <div className={`flex flex-col items-center justify-center border border-foregroundColor rounded-md p-0.5 ${props.className}`}>
-      <div><Icon className="w-16 h-16" /></div>
-      <div className="text-base text-foregroundSecondaryColor mt-0.5">
-        {dayDate}
-      </div>
-      <div>{degree}&deg;</div>
+    <div className="text-center mb-0 flex items-center justify-center flex-col px-2">
+      <span className="block my-1">{dayDate}</span>
+      <Icon className="w-8 h-8" />
+      <span className="block my-1">{degree}&deg;</span>
     </div>
   );
 }

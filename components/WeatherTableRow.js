@@ -15,29 +15,29 @@ export default function WeatherTableRow({
   const hourDate = formatTimestampToNumericHour(timestamp);
 
   return (
-    <tr className="[&>td]:p-2 [&>td>*]:gap-1 even:bg-sky-300/60 odd:bg-sky-300/30 ">
-      <td>
+    <tr>
+      <td class="px-6 py-4 whitespace-nowrap">
         <div className="flex flex-col items-center ">
           <div className="uppercase font-bold text-xs text-foregroundSecondaryColor">{dayDate}</div>
           <div className="uppercase">{hourDate}</div>
         </div>
       </td>
-      <td>
+      <td class="px-6 py-4 whitespace-nowrap">
         <Icon className="w-12 h-12 object-contain" />
       </td>
-      <td>
+      <td class="px-6 py-4 whitespace-nowrap">
         <div className="flex flex-col items-center">
           <div className="uppercase font-bold text-xs text-foregroundSecondaryColor">TEMP</div>
           <div>{maxTemp}&deg;</div>
         </div>
       </td>
-      <td>
+      <td class="px-6 py-4 whitespace-nowrap">
         <div className="flex flex-col items-center">
           <div className="uppercase font-bold text-xs text-foregroundSecondaryColor">FL TEMP</div>
           <div>{feelsLike}&deg;</div>
         </div>
       </td>
-      <td>
+      <td class="px-6 py-4 whitespace-nowrap">
         <div className="flex flex-col items-center">
           <div className="uppercase font-bold text-xs text-foregroundSecondaryColor">WIND</div>
           <div>
@@ -45,7 +45,7 @@ export default function WeatherTableRow({
           </div>
         </div>
       </td>
-      <td>
+      <td class="px-6 py-4 whitespace-nowrap">
         <div className="flex flex-col items-center">
           <div className="uppercase font-bold text-xs text-foregroundSecondaryColor">PRECIP</div>
           <div>

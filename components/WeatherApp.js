@@ -89,23 +89,17 @@ import {
     
     return (
       <main className={`${currentData == null ? "blur-md" : ""} `}>
-        <div className="my-5">
-            <h2 className="text-2xl">LIVE WEATHER APP</h2>
+        <div className="my-5 text-center xl:text-left">
+          <h5 className="flex mb-0 font-medium text-xl">WEATHER APP - Used OpenMeteo API</h5> 
         </div>
-        {Object.keys(selectedResult).length > 0 && (
-          <div className="flex justify-center items-center mt-6">
-            <FaMapMarkerAlt className="w-6 h-6 object-contain"/>
-            <div className="text-center pl-2 text-foregroundColor text-2xl font-medium ">
-              {selectedResult.name}
-            </div>
-          </div>
-        )}
         <WeatherSearch
           latitude={location.latitude}
           longitude={location.longitude}
           onClickResultHandler={onClickResultHandler}
         />
         <WeatherHeader
+          dailyData={dailyData}
+          selectedCity={selectedResult.name}
           currentTemp={currentData?.currentTemp}
           highTemp={currentData?.highTemp}
           lowTemp={currentData?.lowTemp}
@@ -115,32 +109,23 @@ import {
           precip={currentData?.precip}
           iconCode={currentData?.iconCode}
         />
-        <section className="flex justify-between items-center xl:flex-row flex-col">
-          {dailyData.map((item, index) => (
-            <DayCard
-              key={index}
-              iconCode={item.iconCode}
-              timestamp={item.timestamp}
-              degree={item.maxTemp}
-            />
-          ))}
-        </section>
-  
-        <table className="w-full text-center border-spacing-0 my-5">
-          <tbody>
-            {hourlyDisplayData.map((item, index) => (
-              <WeatherTableRow
-                key={index}
-                maxTemp={item.maxTemp}
-                feelsLike={item.feelsLike}
-                precip={item.precip}
-                timestamp={item.timestamp}
-                windSpeed={item.windSpeed}
-                iconCode={item.iconCode}
-              />
-            ))}
-          </tbody>
-        </table>
+        <div class="overflow-x-auto">
+          <table class="rounded-lg overflow-hidden w-full">
+            <tbody class="bg-gray-800">
+              {hourlyDisplayData.map((item, index) => (
+                <WeatherTableRow
+                  key={index}
+                  maxTemp={item.maxTemp}
+                  feelsLike={item.feelsLike}
+                  precip={item.precip}
+                  timestamp={item.timestamp}
+                  windSpeed={item.windSpeed}
+                  iconCode={item.iconCode}
+                />
+              ))}
+            </tbody>
+          </table>
+        </div>
         {hourlyDisplayData.length < hourlyData.length && (
           <div className="flex justify-center items-center my-5">
             <button

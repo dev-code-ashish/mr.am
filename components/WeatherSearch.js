@@ -24,8 +24,8 @@ export default function WeatherSearch({
   }, [searchValue]);
 
   return (
-    <div className="flex justify-between items-center xl:flex-row flex-col gap-x-8 mb-5 p-1">
-      <div className="flex flex-col">
+    <div className="flex justify-between xl:flex-row flex-col gap-x-8 mb-5">
+      <div className="flex flex-col py-2">
         <label className="">
           SEARCH CITY
         </label>
@@ -39,6 +39,7 @@ export default function WeatherSearch({
           <WeatherResult
             searchResult={searchResult}
             onClickResultHandler={(item) => {
+              setSearchValue("");
               setSearchResult([]);
               setSelectedResult(item);
               onClickResultHandler(item);
@@ -46,7 +47,7 @@ export default function WeatherSearch({
           />
         </div>
       </div>
-      <div className="flex flex-col">
+      <div className="flex flex-col py-2">
         <label className="">
           Latitude
         </label>
@@ -60,7 +61,7 @@ export default function WeatherSearch({
           disabled
         />
       </div>
-      <div className="flex flex-col">
+      <div className="flex flex-col py-2">
         <label className="">
           Longitude
         </label>
